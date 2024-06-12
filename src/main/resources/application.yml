@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/e_learning_db # CHANGE IT
+    username: root # CHANGE IT
+    password: password # CHANGE IT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  main:
+    web-application-type: servlet
+
+application:
+  security:
+    jwt:
+      secret-key: 2b44b0b00fd822d8ce753e54dac3dc4e06c2725f7db930f3b9924468b53194dbccdbe23d7baa5ef5fbc414ca4b2e64700bad60c5a7c45eaba56880985582fba4 # CHANGE IT, EXAMPLE: F51836B87EEF55C18A0A33EB8E79B217B77FD3C7F78CE65117ED1F19022BEA0A
+      expiration: 86400000 # a day(24h)
+      refresh-token:
+        expiration: 604800000 # 7 days(168h)
+
+springdoc:
+  version: 2.2.0
